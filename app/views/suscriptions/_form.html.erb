@@ -1,0 +1,30 @@
+<%= form_for(@suscription) do |f| %>
+  <% if @suscription.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @suscription.errors.full_messages.each do |message| %>
+          <li class="alert-danger"><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :customer %><br>
+    <%= select("suscription", "customer_id", Customer.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, {:class => "form-control"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :channel %><br>
+    <%= select("suscription", "channel_id", Channel.all.collect {|p| [ p.theme, p.id ] }, { include_blank: true }, {:class => "form-control"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :expire_date %><br>
+    <%= date_select("suscription", "expire_date", html_options = {:class => "form-control"})  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :class => "btn btn-default" %>
+  </div>
+<% end %>

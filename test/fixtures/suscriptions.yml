@@ -5,6 +5,6 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  customer_id: Customer.first.id
-  channel_id: Channel.first.id
+  customer_id: <%= Customer.first.id %>
+  channel_id: <%= Channel.first.id %>
   expire_date: <%= Date.today + 1.year %>
