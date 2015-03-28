@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'rewards_service/index'
+
   resources :suscriptions
 
   resources :channels
