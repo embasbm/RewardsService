@@ -1,5 +1,5 @@
 class ChannelsController < ApplicationController
-  before_action :set_channel, only: [:show, :edit, :update, :destroy]
+  before_action :set_channel, only: [:edit, :update]
 
   # GET /channels
   # GET /channels.json
@@ -23,8 +23,8 @@ class ChannelsController < ApplicationController
 
     respond_to do |format|
       if @channel.save
-        format.html { redirect_to @channel, notice: 'Channel was successfully created.' }
-        format.json { render :show, status: :created, location: @channel }
+        format.html { redirect_to channels_path, notice: 'Channel was successfully created.' }
+        format.json { render :index, status: :created, location: @channels }
       else
         format.html { render :new }
         format.json { render json: @channel.errors, status: :unprocessable_entity }
@@ -37,8 +37,8 @@ class ChannelsController < ApplicationController
   def update
     respond_to do |format|
       if @channel.update(channel_params)
-        format.html { redirect_to @channel, notice: 'Channel was successfully updated.' }
-        format.json { render :show, status: :ok, location: @channel }
+        format.html { redirect_to channels_path, notice: 'Channel was successfully updated.' }
+        format.json { render :index, status: :ok, location: @channels }
       else
         format.html { render :edit }
         format.json { render json: @channel.errors, status: :unprocessable_entity }

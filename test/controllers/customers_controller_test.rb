@@ -23,7 +23,7 @@ class CustomersControllerTest < ActionController::TestCase
 
   test "should update customer" do
     patch :update, id: @customer, customer: { email: @customer.email, name: @customer.name }
-    assert_redirected_to customer_path(assigns(:customer))
+    assert_redirected_to customers_path
   end
 
 end

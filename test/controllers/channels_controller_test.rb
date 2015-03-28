@@ -23,7 +23,7 @@ class ChannelsControllerTest < ActionController::TestCase
 
   test "should update channel" do
     patch :update, id: @channel, channel: { theme: @channel.theme }
-    assert_redirected_to channel_path(assigns(:channel))
+    assert_redirected_to channels_path
   end
 
 end

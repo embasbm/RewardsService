@@ -21,7 +21,7 @@ class RewardsControllerTest < ActionController::TestCase
       post :create, reward: { description: @reward.description }
     end
 
-    assert_redirected_to reward_path(assigns(:reward))
+    assert_redirected_to rewards_path
   end
 
   test "should get edit" do
@@ -31,7 +31,7 @@ class RewardsControllerTest < ActionController::TestCase
 
   test "should update reward" do
     patch :update, id: @reward, reward: { description: @reward.description }
-    assert_redirected_to reward_path(assigns(:reward))
+    assert_redirected_to rewards_path
   end
 
 end

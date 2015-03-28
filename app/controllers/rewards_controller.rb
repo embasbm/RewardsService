@@ -1,15 +1,10 @@
 class RewardsController < ApplicationController
-  before_action :set_reward, only: [:show, :edit, :update, :destroy]
+  before_action :set_reward, only: [:edit, :update]
 
   # GET /rewards
   # GET /rewards.json
   def index
     @rewards = Reward.all
-  end
-
-  # GET /rewards/1
-  # GET /rewards/1.json
-  def show
   end
 
   # GET /rewards/new
@@ -28,8 +23,8 @@ class RewardsController < ApplicationController
 
     respond_to do |format|
       if @reward.save
-        format.html { redirect_to @reward, notice: 'Reward was successfully created.' }
-        format.json { render :show, status: :created, location: @reward }
+        format.html { redirect_to rewards_path, notice: 'Reward was successfully created.' }
+        format.json { render :index, status: :created, location: @rewards }
       else
         format.html { render :new }
         format.json { render json: @reward.errors, status: :unprocessable_entity }
@@ -42,22 +37,12 @@ class RewardsController < ApplicationController
   def update
     respond_to do |format|
       if @reward.update(reward_params)
-        format.html { redirect_to @reward, notice: 'Reward was successfully updated.' }
-        format.json { render :show, status: :ok, location: @reward }
+        format.html { redirect_to rewards_path, notice: 'Reward was successfully updated.' }
+        format.json { render :index, status: :ok, location: @rewards }
       else
         format.html { render :edit }
         format.json { render json: @reward.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /rewards/1
-  # DELETE /rewards/1.json
-  def destroy
-    @reward.destroy
-    respond_to do |format|
-      format.html { redirect_to rewards_url, notice: 'Reward was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
