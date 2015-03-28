@@ -10,3 +10,7 @@ Customer.create(name: 'John Smith', email: 'jsmith@sky.co.uk')
 Customer.create(name: 'Ma Lee', email: 'mlee@sky.co.uk')
 Customer.create(name: 'Alberto Suarez', email: 'asuarez@sky.co.uk')
 Customer.create(name: 'Mary Barber', email: 'mbarber@sky.co.uk')
+
+Reward.create(description: 'CHAMPIONS LEAGUE FINAL TICKET')
+Reward.create(description: 'KARAOKE PRO MICROPHONE')
+Reward.create(description: 'PIRATES OF THE CARIBBEAN COLLECTION')
