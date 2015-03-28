@@ -2,7 +2,7 @@
 
 <h1>Listing Customers</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,9 +16,7 @@
       <tr>
         <td><%= customer.name %></td>
         <td><%= customer.email %></td>
-        <td><%= link_to 'Show', customer %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
