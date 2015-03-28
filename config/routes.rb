@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :channels
+
   resources :rewards
 
   resources :customers
