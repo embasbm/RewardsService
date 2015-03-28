@@ -11,12 +11,12 @@
 
   <div class="form-group">
     <%= f.label :customer %><br>
-    <%= select("suscription", "customer_id", Customer.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, {:class => "form-control"}) %>
+    <%= select("suscription", "customer_id", Customer.all.collect {|p| [ p.name, p.id ] }, { include_blank: false }, {:class => "form-control"}) %>
   </div>
 
   <div class="form-group">
     <%= f.label :channel %><br>
-    <%= select("suscription", "channel_id", Channel.all.collect {|p| [ p.theme, p.id ] }, { include_blank: true }, {:class => "form-control"}) %>
+    <%= select("suscription", "channel_id", Channel.all.collect {|p| [ p.theme, p.id ] }, { include_blank: false }, {:class => "form-control"}) %>
   </div>
 
   <div class="form-group">
