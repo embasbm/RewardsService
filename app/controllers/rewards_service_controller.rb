@@ -10,9 +10,13 @@ class RewardsServiceController < ApplicationController
 
   def rewards_available
     elgibility = elegibility_service_stub
+    customer = Customer.find(params[:customer][:customer_id])
+    if customer.nil? # in case dropdown is removed by textfield
+      @selected_rewards = 'not valid account number'
+      return
+    end
     case elgibility
       when 1
-        customer = Customer.find(params[:customer][:customer_id])
         @selected_rewards = customer.get_relevant_rewards
       when 2
         @selected_rewards = nil
@@ -26,6 +30,7 @@ class RewardsServiceController < ApplicationController
     end
   end
 
+  # mock or stub of the EligibilityService interface
   def elegibility_service_stub
     rand(1..4)
   end
