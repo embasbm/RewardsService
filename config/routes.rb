@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'rewards_service/index'
+  post "/rewards_available" => 'rewards_service#rewards_available', as: 'fetch_rewards_available'
 
   resources :suscriptions
 

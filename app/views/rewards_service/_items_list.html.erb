@@ -1,0 +1,25 @@
+<% if items.class == 'String' %>
+  <p class="alert-info"><%= items %></p>
+<% elsif items.nil? %>
+  <p class="alert-info">Not eligible or Technical failure exception</p>
+<% elsif items.empty? %>
+  <p class="alert-info">This user's porfolio is empty</p>
+<% else %>
+  <div class="row">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Rewards </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% items.each do |reward| %>
+          <tr>
+            <td><%= reward.description %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
