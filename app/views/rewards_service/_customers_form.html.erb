@@ -1,0 +1,9 @@
+<p>Please pick a customer ... </p>
+<%= form_tag( { :controller => :rewards_service, :action => :rewards_available, :method => :post }, {:remote => true} ) do %>
+  <div class="form-group">
+    <%= select("customer", "customer_id", Customer.all.collect {|p| [ p.name, p.id ] }, { include_blank: false }, {:class => "form-control"}) %>
+  </div>
+  <div class="actions">
+    <%= submit_tag 'Find Rewards', :class => "btn btn-primary btn-lg active" %>
+  </div>
+<% end -%>
